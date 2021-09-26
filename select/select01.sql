@@ -42,11 +42,3 @@ SELECT * FROM emp WHERE ename LIKE '__R%'
 
 #斜杠转义
 SELECT * FROM emp WHERE ename LIKE '%\_%'
-
-
-
-
-
-
-
-
