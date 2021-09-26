@@ -38,4 +38,3 @@ SELECT ename,sal AS oldsal,job,
 (CASE job WHEN 'manager' THEN sal*1.1 WHEN 'SALESMAN' THEN sal*1.4 ELSE sal END) 
 AS newsal 
 FROM emp
-
