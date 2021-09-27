@@ -33,5 +33,22 @@ UNIQUE #列级约束
 #表级约束
 UNIQUE(ename,email)
 
-#主键和外键
+#主键
+#没有主键表无效 
+#一个字段叫单一主键，多个字段一起约束叫复合主键
+#实际开发中不建议使用复合主键
+PRIMARY KEY 
+#自然主键 主键是自然数和业务没关系
+#业务主键 和业务紧密关联 
+#不建议使用业务主键 
+AUTO_INCREMENT #自增auto_increment
+
+#外键
+FOREIGN KEY(did) REFERENCES t_class(id)
+
+#存储引擎
+ENGINE
+
+#查询存储引擎
+SHOW ENGINES \G
 
