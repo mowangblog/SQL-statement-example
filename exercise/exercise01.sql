@@ -68,15 +68,25 @@ WHERE s.grade = (SELECT grade FROM salgrade WHERE (SELECT AVG(e.sal) avgSal
 FROM emp e
 GROUP BY deptno ORDER BY avgSal ASC LIMIT 1) BETWEEN losal AND hisal )
 
-#取得比普通员工（不在mgr）的最高薪水还要高的领导人姓名
+#8，取得比普通员工（不在mgr）的最高薪水还要高的领导人姓名
 SELECT e.ename,e.sal
 FROM emp e
 WHERE e.sal > (
 SELECT MAX(sal)
 FROM emp 
-WHERE empno NOT IN(SELECT IFNULL(mgr,0) FROM emp))
+WHERE empno NOT IN(SELECT DISTINCT mgr FROM emp  WHERE mgr IS NOT NULL))
 
+#9，取得薪水最高的前五名
+SELECT ename,sal
+FROM emp
+ORDER BY sal DESC
+LIMIT 5
 
+#10，取得薪水最高的6-10名员工
+SELECT ename,sal
+FROM emp
+ORDER BY sal DESC
+LIMIT 5,5
 
 
 
