@@ -1,3 +1,4 @@
+#初始化
 /*
 SQLyog Community v13.1.6 (64 bit)
 MySQL - 8.0.19 : Database - studysql
